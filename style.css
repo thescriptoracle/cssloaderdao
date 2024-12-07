@@ -1,0 +1,73 @@
+ body {
+     background-color: rgb(17, 17, 48);
+ }
+
+ h3 {
+     text-align: center;
+     margin-top: 300px;
+     padding-left: 25px;
+     color: white;
+     font-size: 14px;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     font-weight: lighter;
+ }
+
+ img {
+     position: absolute;
+     top: 25%;
+     left: 50%;
+     margin-top: -50px;
+     margin-left: -50px;
+     width: 100px;
+     height: 100px;
+     border: 5px solid #f3f3f3;
+     border-top: 5px solid #ffffff;
+     border-radius: 50%;
+     animation: spin 2s linear infinite;
+ }
+
+ @keyframes spin {
+     0% {
+         transform: rotate(0deg);
+     }
+
+     100% {
+         transform: rotate(360deg);
+     }
+ }
+
+ @media (max-width: 768px) {
+     .img {
+         margin-top: -25px;
+         margin-left: -25px;
+         width: 50px;
+         height: 50px;
+         border: 3px solid #f3f3f3;
+         border-top: 3px solid #ffffff;
+     }
+ }
+
+ .center-container {
+     margin-top: 50px;
+     text-align: center;
+ }
+
+ .retry-button {
+     background-color: rgb(0, 56, 199);
+     color: #fff;
+     border: none;
+     border-radius: 5px;
+     padding: 10px 20px;
+     font-size: 14px;
+     cursor: pointer;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     transition: background-color 0.3s, transform 0.2s;
+ }
+
+ .retry-button:hover {
+     background-color: #0056b3;
+ }
+
+ .retry-button:active {
+     transform: scale(0.98);
+ }
