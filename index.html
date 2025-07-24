@@ -1,76 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Loading Screen</title>
-  <style>
-    body, html {
-      height: 100%;
-      margin: 0;
-      background-color: #0c0c0c;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Segoe UI', sans-serif;
-      color: #ffffff;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading Screen</title>
+    <style>
+      body,
+      html {
+        text-decoration: none;
+        height: 100%;
+        margin: 0;
+        background-color: #0c0c0c;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Segoe UI", sans-serif;
+        color: #ffffff;
+      }
+      * {
+        text-decoration: none;
+      }
 
-    .loader-container {
-      text-align: center;
-    }
+      .loader-container {
+        text-align: center;
+      }
 
-    .spinner {
-      border: 6px solid #444;
-      border-top: 6px solid #012267;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 1s linear infinite;
-      margin: 0 auto 20px;
-    }
+      .spinner {
+        border: 6px solid #444;
+        border-top: 6px solid #0402aa;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 20px;
+      }
 
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
 
-    .message {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
+      .message {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
 
-    #retryBtn {
-      display: none;
-      padding: 10px 20px;
-      font-size: 1rem;
-      color: white;
-      background-color: #01287a;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
+      #retryBtn {
+        display: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: white;
+        background-color: #f7f7f7;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
 
-    #retryBtn:hover {
-      background-color: #00319a;
-    }
-  </style>
-</head>
-<body>
+      #retryBtn:hover {
+        background-color: #ffffff;
+      }
+      button a {
+        color: #1500b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loader-container">
+      <div class="spinner"></div>
+      <div class="message" id="statusText">Connecting...</div>
+      <button id="retryBtn"><a href="./index.html">Try Again</a></button>
+    </div>
 
-  <div class="loader-container">
-    <div class="spinner"></div>
-    <div class="message" id="statusText">Connecting...</div>
-    <button id="retryBtn" onclick="location.href='index.html'">Try Again</button>
-  </div>
-
-  <script>
-    setTimeout(() => {
-      document.getElementById("statusText").innerText = "Connection failed. Try again.";
-      document.getElementById("retryBtn").style.display = "inline-block";
-    }, 2000);
-  </script>
-
-</body>
+    <script>
+      setTimeout(() => {
+        document.getElementById("statusText").innerText =
+          "Connection failed. Try again.";
+        document.getElementById("retryBtn").style.display = "inline-block";
+        document.getElementById("retryBtn").style.color = "red";
+      }, 2000);
+    </script>
+  </body>
 </html>
